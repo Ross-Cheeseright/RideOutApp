@@ -26,7 +26,7 @@ public class WebControl {
 		
 		model.put("allUsers", allUsers);
 		model.put("user", user);
-		
+
 		return "register";
 	}
 	
