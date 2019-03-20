@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<title>Ride-Out Add Rideout</title>
+	</head>
+	<body>
+	<form action ="" method="post">
+		EVENT NAME: <input type="text" th:field="${rideout.eventName}" /><br />
+		START DATE: <input type="text" th:field="${rideout.startDate}" /><br />
+		END DATE: <input type="text" th:field="${rideout.endDate}" /><br />
+		MAX RIDERS: <input type="text" th:field="${rideout.maxRiders}" /><br />
+		
+		<input type="submit" value="Add Rideout" />		
+	</form>
+	
+	<div th:each="rideout : ${allRideouts}" th:text="|${rideout.eventName} -> ${rideout.startDate}|">
+	
+	</div>
+	
+	</body>
+</html>
