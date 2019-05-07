@@ -18,8 +18,9 @@ import com.twobeardedguys.repository.RideoutRepository;
 public class WebControl {
 	
 	@Autowired
-	private RideoutRepository rideoutRepo;
 	private UserRepository userRepo;
+	@Autowired
+	private RideoutRepository rideoutRepo;
 	
 	@GetMapping("/")
 	public String root (ModelMap model) {
@@ -47,11 +48,9 @@ public class WebControl {
 		
 		return"redirect:/";
 	}
-	
-/*
 
-	@GetMapping("/")
-	public String root (ModelMap model) {
+	@RequestMapping("/register")
+	public String register(ModelMap model) {
 		
 		List<User> allUsers = userRepo.findAll();
 		User user = new User();
@@ -62,11 +61,11 @@ public class WebControl {
 		return "register";
 	}
 	
-	@PostMapping("/removeme")
-	public String rootPostD (User user) {
+	@PostMapping("/register")
+	public String registerPost(User user) {
 		userRepo.save(user);
 		
 		return"redirect:/";
 	}
-	*/
+
 }
