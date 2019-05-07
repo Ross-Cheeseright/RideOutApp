@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html xmlns:th="http://thymeleaf.org">
 	<head>
-		<title>Ride-Out Register User</title>
+		<title>Ride-Out Landing Page</title>
 		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1">
   		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -10,16 +10,11 @@
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-	<form action ="" method="post">
-		EMAIL: <input type="text" th:field="${user.email}" /><br />
-		PASSWORD: <input type="password" th:field="${user.password}" /><br />
-		
-		<input type="submit" value="Register User" class="btn btn-info" />		
-	</form>
-	
-	<div th:each="user : ${allUsers}" th:text="|${user.email} -> ${user.password}|">
-	
-	</div>
+	<a th:href="@{register}" class="btn btn-info" role="button">Add New User</a>
+	<a th:href="@{addRideout}" class="btn btn-info" role="button">Add New Rideout</a>
+	<a href="#" class="btn btn-info" role="button">View Rideout</a>
+	<a href="#" class="btn btn-info" role="button">Log Out</a>
+
 	
 	</body>
 </html>
